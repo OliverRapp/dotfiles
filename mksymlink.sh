@@ -3,6 +3,7 @@
 DOTFILES=~/dotfiles
 
 ln -s $DOTFILES/bashrc ~/.bashrc
+ln -s $DOTFILES/tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.vim/bundle
 ln -s $DOTFILES/vimrc ~/.vimrc
