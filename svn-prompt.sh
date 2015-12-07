@@ -22,3 +22,14 @@ parse_svn_clean() {
         echo "$1"
     fi
 }
+
+___svn_ps1() {
+    if [ $(parse_svn_clean 0 1) = 0 ]; then
+        state_color="\033[01;32m"
+    else
+        state_color="\033[01;31m"
+    fi
+
+   echo -e $state_color$(parse_svn_branch " %s")
+   unset state_color
+}

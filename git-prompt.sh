@@ -12,3 +12,14 @@ parse_git_clean() {
         echo "$1"
     fi
 }
+
+___git_ps1() {
+    if [ $(parse_git_clean 0 1) = 0 ]; then
+        state_color="\033[1;32m"
+    else
+        state_color="\033[1;31m"
+    fi
+
+    echo -e $state_color$(parse_git_branch " %s")
+    unset state_color
+}

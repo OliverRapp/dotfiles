@@ -43,8 +43,7 @@ unset color_prompt force_color_prompt
 
 . ~/dotfiles/svn-prompt.sh
 . ~/dotfiles/git-prompt.sh
-# export PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]\h\[\033[01;34m\] \w $(__git_ps1)$(__svn_ps1) \n\[\033[01;34m\]>\[\033[00m\] '
-export PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]\h\[\033[01;34m\] \w`if [ $(parse_svn_clean 0 1) = 0 ]; then echo "\[\033[01;32m\]"; else echo "\[\033[01;31m\]"; fi` $(parse_svn_branch " %s") \n\[\033[01;34m\]>\[\033[00m\] '
+PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[01;30m\]\h\[\033[01;34m\] \w $(___git_ps1)$(___svn_ps1) \n\[\033[01;34m\]>\[\033[00m\] '
 
 
 
@@ -82,7 +81,24 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#
+# try to set DISPLAY smart (from Hans) :)
+#
+if test -z "$DISPLAY" -a "$TERM" = "xterm" -a -x /usr/bin/who ; then
+    WHOAMI="`/usr/bin/who am i`"
+    _DISPLAY="`expr "$WHOAMI" : '.*(\([^\.][^\.]*\).*)'`:0.0"
+    if [ "${_DISPLAY}" != ":0:0.0" -a "${_DISPLAY}" != " :0.0" \
+         -a "${_DISPLAY}" != ":0.0" ]; then
+        export DISPLAY="${_DISPLAY}";
+    fi
+    unset WHOAMI _DISPLAY
+fi
+
 export PATH=~/bin:$PATH
+export EDITOR=/usr/bin/vim
+export DISPLAY LESS PS1 PS2
+umask 022
+unset MAILCHECK
 
 # Disable bash flow control
 /bin/stty -ixon
