@@ -7,8 +7,13 @@ set fileformats=unix,dos,mac
 syntax on
 set number relativenumber
 set mouse=a
-set cursorline
 set clipboard=unnamedplus
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " Trailing whitespace
 set list listchars=tab:»·,trail:·
