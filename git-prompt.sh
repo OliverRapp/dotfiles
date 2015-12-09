@@ -5,7 +5,7 @@ parse_git_branch() {
 }
 
 parse_git_clean() {
-    STATE=$(LANG='C' git status --short 2>/dev/null | grep "^.[MAD\\?]" | wc -l)
+    STATE=$(LANG='C' git status --short 2>/dev/null | grep "^.+[MAD\\?]" | wc -l)
     if [ $STATE != 0 ]; then
         echo "$2"
     else
