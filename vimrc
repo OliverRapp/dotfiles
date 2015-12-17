@@ -17,7 +17,7 @@ augroup END
 
 " Trailing whitespace
 set list listchars=tab:»·,trail:·
-autocmd FileType c,cpp,java,php,javascript,smarty autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,javascript,smarty,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " ctags - locate tags file in current directory, then parents
 set tags=tags;
@@ -141,3 +141,5 @@ nnoremap <Leader>. :lcd %:p:h<CR>
 " Opens an editr command with the currently edited file filled in
 noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
+" CtrlP Buffers
+nnoremap <Leader>b :CtrlPBuffer<CR>
