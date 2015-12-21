@@ -9,6 +9,10 @@ set number relativenumber
 set mouse=a
 set clipboard=unnamedplus
 
+" wildmode
+set wildmode=longest,list,full
+set wildmenu
+
 augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
