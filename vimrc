@@ -41,6 +41,16 @@ set anti enc=utf-8
 set guioptions-=T
 set guifont=Source\ Code\ Pro\ 12
 
+" Eliminating delays on ESC
+" http://usevim.com/2013/07/24/powerline-escape-fix/
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
 
 " PLUGINS
 filetype off
@@ -147,3 +157,5 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " CtrlP Buffers
 nnoremap <Leader>b :CtrlPBuffer<CR>
+
+
