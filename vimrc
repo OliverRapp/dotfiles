@@ -158,4 +158,6 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " CtrlP Buffers
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
+" svn diff
+map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
 
