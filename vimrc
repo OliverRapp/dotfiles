@@ -161,3 +161,8 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " svn diff
 map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
 
+" Window navigation
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
