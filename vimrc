@@ -128,6 +128,14 @@ let g:syntastic_php_checkers = ['php']
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
+" CtrlP
+let g:ctrlp_use_caching = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_height = 18
+let g:ctrlp_custom_ignore = '\v[\/]smarty\/templates_c$'
+
 " Vdebug
 let g:vdebug_options = {}
 let g:vdebug_options["watch_window_style"] = 'compact'
