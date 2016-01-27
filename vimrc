@@ -3,6 +3,8 @@
 set nocompatible
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set fileformats=unix,dos,mac
+set nowrap
+set sidescroll=5
 
 syntax on
 set number relativenumber
@@ -20,7 +22,7 @@ augroup CursorLine
 augroup END
 
 " Trailing whitespace
-set list listchars=tab:»·,trail:·
+set list listchars=tab:»·,trail:·,precedes:<,extends:>
 autocmd FileType c,cpp,java,php,javascript,smarty,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " ctags - locate tags file in current directory, then parents
