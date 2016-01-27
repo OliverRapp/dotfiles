@@ -5,6 +5,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set fileformats=unix,dos,mac
 set nowrap
 set sidescroll=5
+set hidden
 
 syntax on
 set number relativenumber
