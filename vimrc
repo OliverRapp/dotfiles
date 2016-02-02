@@ -67,6 +67,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'joonty/vdebug'
+Plugin 'blueyed/smarty.vim'
 
 call vundle#end()
 filetype plugin indent on
