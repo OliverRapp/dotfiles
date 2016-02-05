@@ -26,6 +26,12 @@ augroup END
 set list listchars=tab:»·,trail:·,precedes:<,extends:>
 autocmd FileType c,cpp,java,php,javascript,smarty,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+
+" Enable spell-checking (germa) and text wrapping for commit messages
+autocmd FileType svn setlocal spell spelllang=de_de tw=72
+autocmd FileType gitcommit setlocal spell spelllang=en_us tw=72
+
+
 " ctags - locate tags file in current directory, then parents
 set tags=tags;
 
@@ -180,3 +186,8 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
+
+" Spell checking
+nnoremap <Leader>sd :setlocal spell spelllang=de_de<CR>
+nnoremap <Leader>se :setlocal spell spelllang=en_us<CR>
+
