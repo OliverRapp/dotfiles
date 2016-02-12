@@ -6,6 +6,7 @@ set fileformats=unix,dos,mac
 set nowrap
 set sidescroll=5
 set hidden
+set colorcolumn=80
 
 syntax on
 set number relativenumber
