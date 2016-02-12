@@ -161,6 +161,11 @@ let g:UltiSnipsJumpForwardTrigger="<Right>"
 let g:UltiSnipsJumpBackwardTrigger="<Left>"
 let g:UltiSnipsEditSplit="vertical"
 
+augroup UltiSnipsConfig
+    au!
+    au FileType smarty UltiSnipsAddFiletypes smarty.html.javascript.php
+    au FileType html   UltiSnipsAddFiletypes html.javascript.php
+augroup END
 
 " MAPPINGS
 
