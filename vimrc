@@ -76,6 +76,9 @@ Plugin 'joonty/vdebug'
 Plugin 'blueyed/smarty.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -151,6 +154,12 @@ let g:ctrlp_custom_ignore = '\v[\/]smarty\/templates_c$'
 " Vdebug
 let g:vdebug_options = {}
 let g:vdebug_options["watch_window_style"] = 'compact'
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<Right>"
+let g:UltiSnipsJumpBackwardTrigger="<Left>"
+let g:UltiSnipsEditSplit="vertical"
 
 
 " MAPPINGS
