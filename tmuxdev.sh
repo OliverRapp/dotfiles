@@ -16,7 +16,6 @@ $tmux split-window -h
 
 # svn
 $tmux new-window -t $SESSION -n 'svn'
-$tmux split-window -h
 
 # attach to session
 $tmux select-window -t $SESSION:1 \; select-pane -t 1
