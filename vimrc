@@ -206,3 +206,6 @@ nmap <C-h> <C-w>h
 nnoremap <Leader>sd :setlocal spell spelllang=de_de<CR>
 nnoremap <Leader>se :setlocal spell spelllang=en_us<CR>
 
+" Insetr word under cursor to CtrlP
+nmap <Leader>p :CtrlP<CR><C-\>w
+
