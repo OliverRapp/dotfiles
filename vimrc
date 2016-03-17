@@ -13,6 +13,8 @@ set number relativenumber
 set mouse=a
 set clipboard=unnamedplus
 
+set dir=~/.vim/swap//,~/tmp//,/tmp//,.
+
 " wildmode
 set wildmode=longest,list,full
 set wildmenu
