@@ -59,7 +59,7 @@ if ! has('gui_running')
   set ttimeoutlen=10
   augroup FastEscape
     autocmd!
-    au InsertEnter * set timeoutlen=0
+    au InsertEnter * set timeoutlen=500
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
@@ -81,7 +81,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -169,6 +169,9 @@ augroup UltiSnipsConfig
     au FileType smarty UltiSnipsAddFiletypes smarty.html.javascript.php
     au FileType html   UltiSnipsAddFiletypes html.javascript.php
 augroup END
+
+" emmet
+let g:user_emmet_mode='a'
 
 " MAPPINGS
 
