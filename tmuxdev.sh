@@ -14,8 +14,8 @@ $tmux new-window -t $SESSION -n 'logs'
 $tmux new-window -t $SESSION -n 'mysql'
 $tmux split-window -h
 
-# svn
-$tmux new-window -t $SESSION -n 'svn'
+# git
+$tmux new-window -t $SESSION -n 'git'
 
 # attach to session
 $tmux select-window -t $SESSION:1 \; select-pane -t 1
