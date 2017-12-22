@@ -29,6 +29,10 @@ augroup END
 set list listchars=tab:»·,trail:·,precedes:<,extends:>
 autocmd FileType c,cpp,java,php,javascript,smarty,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Better line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
 
 " Enable spell-checking (germa) and text wrapping for commit messages
 autocmd FileType svn setlocal spell spelllang=de_de tw=72
